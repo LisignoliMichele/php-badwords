@@ -1,7 +1,9 @@
 <?php
-// variabili
-$frase = "Il corso boolean é una figata pazzesaca";
+// variabile
+$badword = $_GET["badword"];
+$frase = 'Il corso boolean é una ' . $badword .' pazzesaca';
 $cleanVersion = str_replace("figata", "f***ata", $frase);
+$fraselength = strlen($cleanVersion);
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +15,11 @@ $cleanVersion = str_replace("figata", "f***ata", $frase);
       <title>BadWords</title>
    </head>
    <body>
-   <p><?php echo $cleanVersion ?></p> 
+      <?php if($badword === "figata") { ?>
+      <p> <?php echo $cleanVersion ?> </p> 
+      <p> <?php echo 'Questa frase é lunga ' . $fraselength ." caratteri"?></p>
+      <?php } else { ?>
+      <p>Copy and ADD this in the URL "?badword=figata"</p>
+      <?php }; ?>
    </body>
 </html>
