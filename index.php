@@ -1,8 +1,8 @@
 <?php
 // variabile
 $badword = $_GET["badword"];
-$frase = 'Il corso boolean é una ' . $badword .' pazzesaca';
-$cleanVersion = str_replace("figata", "f***ata", $frase);
+$frase = 'Il corso boolean é una figata pazzesaca';
+$cleanVersion = str_replace($badword , "f***ata", $frase);
 $fraselength = strlen($cleanVersion);
 ?>
 
